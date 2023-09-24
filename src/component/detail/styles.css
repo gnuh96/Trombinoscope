@@ -1,0 +1,41 @@
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding: 30px;
+}
+
+.detailContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #acacac;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.detailImg{
+    padding: 1rem;
+}
+
+.detailImg img{
+    max-height: 200px;
+    max-width: 100%;
+}
+
+.detailDonuts{
+    display: flex;
+    align-items: center;
+}
+
+.detailMail{
+    background-color: #e9ecef;
+    padding: 1rem 0;
+    width: 100%;
+    height: 100%;
+}
+
+.detailMail span {
+    margin-left: 1rem;
+}
