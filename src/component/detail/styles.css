@@ -41,3 +41,7 @@
 .detailMail span {
     margin-left: 1rem;
 }
+
+.textNom::first-letter {
+    text-transform: capitalize;
+}

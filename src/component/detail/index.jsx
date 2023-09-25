@@ -36,7 +36,7 @@ function Detail({data}) {
                 <div className='detailImg'>
                     <img src={parseImgUrl(data[listeDetail.logo])} alt='logo_game' />   
                 </div>
-                <h3>{data[listeDetail.nom]}</h3>
+                <h3 className='textNom'>{data[listeDetail.nom]}</h3>
                 <div className='detailDonuts'>
                     <DonutDet data={parseGroupe(listeDetail.critere)} title="Criteres"/>
                     <DonutDet data={parseGroupe(listeDetail.avantage)} title={"Avantages"}/>
