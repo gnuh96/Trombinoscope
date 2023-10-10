@@ -1,9 +1,8 @@
 .categorie {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.categorieText{
-    border-bottom: 1px solid #ddd;
+.categorieText {
+  border-bottom: 1px solid #ddd;
 }
-

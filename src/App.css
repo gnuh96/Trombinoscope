@@ -1,13 +1,13 @@
 .detailContainer {
-    width: 100%;
-    display: flex;
-    padding: 30px;
-    flex-wrap: wrap;
-    justify-content: center; 
-    margin: -8px;
+  width: 100%;
+  display: flex;
+  padding: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -8px;
 }
 
 .categorieContainer {
-    background-color: #dce6e9;
-    padding: 30px;
+  background-color: #dce6e9;
+  padding: 30px;
 }
