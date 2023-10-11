@@ -2,9 +2,15 @@
   width: 100%;
   display: flex;
   padding: 30px;
-  flex-wrap: wrap;
   justify-content: center;
   margin: -8px;
+  flex-direction: column;
+}
+
+.detailList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .categorieContainer {

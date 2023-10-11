@@ -4,11 +4,13 @@ import { url } from "./utils/constant";
 import "./App.css";
 import Detail from "./component/detail";
 import * as d3 from "d3";
+import FilterOverlay from "./component/filterOverlay";
 
 function App() {
   const [data, setData] = useState([]);
   const [dataCategorie, setDataCategorie] = useState([]);
   const [dataDetail, setDataDetail] = useState([]);
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +30,6 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(data, dataCategorie, dataDetail);
   useEffect(() => {
     const newDataCategorie = data.map((obj) => {
       const newObj = {};
@@ -43,7 +44,8 @@ function App() {
       }
       return newObj;
     });
-    const newDataDetail = data.map((obj) => {
+
+    const newDataDetail = filterObjectsByValue(data, filter).map((obj) => {
       const newObj = {};
       for (const key in obj) {
         if (
@@ -59,7 +61,23 @@ function App() {
     });
     setDataCategorie(newDataCategorie);
     setDataDetail(newDataDetail);
-  }, [data]);
+  }, [data, filter]);
+
+  const handleFilter = (filter) => {
+    setFilter(filter);
+  };
+
+  const filterObjectsByValue = (array, targetValue) => {
+    if (targetValue === "") return array;
+    return array.filter((obj) => {
+      for (const key in obj) {
+        if (obj[key].includes(targetValue)) {
+          return true;
+        }
+      }
+      return false;
+    });
+  };
 
   return (
     <div className="App">
@@ -68,9 +86,12 @@ function App() {
       </div>
 
       <div className="detailContainer">
-        {dataDetail.map((obj, i) => (
-          <Detail key={`detail_response_${i}`} data={obj} />
-        ))}
+        <FilterOverlay onValidate={handleFilter} />
+        <div className="detailList">
+          {dataDetail.map((obj, i) => (
+            <Detail key={`detail_response_${i}`} data={obj} />
+          ))}
+        </div>
       </div>
     </div>
   );

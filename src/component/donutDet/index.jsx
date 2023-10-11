@@ -1,6 +1,6 @@
 import { schemeSet3 } from "d3-scale-chromatic";
 import { Doughnut } from "react-chartjs-2";
-import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
+import { Chart, ArcElement, Tooltip } from "chart.js";
 import "./styles.css";
 import { valsCount } from "../../utils/constant";
 
